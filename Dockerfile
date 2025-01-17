@@ -8,7 +8,7 @@ COPY gradle ./gradle
 RUN gradle dependencise --no-daemon
 
 COPY src ./src
-COPY gradle bootJar --no-daemon -x test
+RUN gradle bootJar --no-daemon -x test
 
 # 실행 단계
 FROM amazoncorretto:17-alpine
